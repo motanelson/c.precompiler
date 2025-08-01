@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int eeppromX(int a,int b){ 
+int sum(int a,int b){ 
   int ii=0;
   int l=0;
   char i[]={"hello world...\n"};
