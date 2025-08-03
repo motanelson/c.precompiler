@@ -1,9 +1,3 @@
-wasm game
-
-
-
-emcc main.c -o main.wasm  
-
-wasmer main.wasm
+compiler c to .wat
 
 https://blog.ttulka.com/learning-webassembly-2-wasm-binary-format/
