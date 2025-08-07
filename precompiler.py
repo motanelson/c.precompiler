@@ -1,8 +1,31 @@
-code ="""void main()
+codex ="""void main()
 {
-    print("");
+    print("\\;\\{\\}\\(\\)\\\"");
 }
 """
+def encoderx(codex):
+    code=codex.replace("\\;",chr(255))
+    code=code.replace("\\{",chr(254))
+    code=code.replace("\\}",chr(253))
+    code=code.replace("\\(",chr(252))
+    code=code.replace("\\)",chr(251))
+    code=code.replace("\\\"",chr(250))
+    return code
+    
+def dencoderx(codex):
+    code=codex.replace(chr(255),";")
+    code=code.replace(chr(254),"{")
+    code=code.replace(chr(253),"}")
+    code=code.replace(chr(252),"(")
+    code=code.replace(chr(251),")")
+    code=code.replace(chr(250),"\\\"")
+
+    
+    return code
+code=encoderx(codex)
+
+
+
 print("\033c\033[43;30m\n\n")
 lines =0
 code2=code.split(";")
@@ -26,4 +49,6 @@ for n in code2:
                 
                   code6=nnn.split("(")
                   for nnnn in code6:
-                     print(str(lines)+"___________________"+nnnn.strip())
+                     print(str(lines)+"___________________"+dencoderx(nnnn.strip()))
+
+
